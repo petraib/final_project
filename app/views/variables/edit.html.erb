@@ -1,0 +1,64 @@
+<!-- Validation failure messages -->
+<% if @variable.errors.any? %>
+  <% @variable.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Variable #<%= @variable.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_variable/<%= @variable.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for indicator_id -->
+      <div class="form-group">
+        <label for="indicator_id" class="control-label">
+          Indicator
+        </label>
+
+        <input type="text" id="indicator_id" name="indicator_id" placeholder="Indicator" class="form-control" value="<%= @variable.indicator_id %>">
+      </div>
+
+      <!-- Label and input for model_id -->
+      <div class="form-group">
+        <label for="model_id" class="control-label">
+          Model
+        </label>
+
+        <input type="text" id="model_id" name="model_id" placeholder="Model" class="form-control" value="<%= @variable.model_id %>">
+      </div>
+
+      <!-- Label and input for weight -->
+      <div class="form-group">
+        <label for="weight" class="control-label">
+          Weight
+        </label>
+
+        <input type="text" id="weight" name="weight" placeholder="Weight" class="form-control" value="<%= @variable.weight %>">
+      </div>
+
+      <!-- Label and input for ourmodel_id -->
+      <div class="form-group">
+        <label for="ourmodel_id" class="control-label">
+          Ourmodel
+        </label>
+
+        <input type="text" id="ourmodel_id" name="ourmodel_id" placeholder="Ourmodel" class="form-control" value="<%= @variable.ourmodel_id %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Variable
+      </button>
+      or
+      <a href="/variables/<%= @variable.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
