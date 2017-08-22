@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h3>Ourmodel #<%= @ourmodel.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Model weight</dt>
+      <dd><%= @ourmodel.model_weight %></dd>
+
+      <dt>Ourmodel name</dt>
+      <dd><%= @ourmodel.ourmodel_name %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/ourmodels" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/ourmodels/<%= @ourmodel.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_ourmodel/<%= @ourmodel.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
