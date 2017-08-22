@@ -7,6 +7,11 @@ end
 
 gem "starter_generators", :git => "https://github.com/raghubetina/starter_generators"
 
+
+gem "groupdate", :git =>"git@github.com:ankane/groupdate.git"
+
+gem "chartkick"
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'
 # Use sqlite3 as the database for Active Record

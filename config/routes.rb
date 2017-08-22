@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   # Routes for the Ourmodel resource:
+  
+    root "ourmodels#index"
+
+
   # CREATE
   get "/ourmodels/new", :controller => "ourmodels", :action => "new"
   post "/create_ourmodel", :controller => "ourmodels", :action => "create"

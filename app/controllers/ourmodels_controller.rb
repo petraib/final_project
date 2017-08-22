@@ -1,7 +1,14 @@
 class OurmodelsController < ApplicationController
   def index
     @ourmodels = Ourmodel.all
-
+  @exposure = 90
+    #Indicator.group(:name).count
+    #Indicator.pluck(:name, 1)
+    
+    @dt = Array.new(Ourmodel.count) { Hash.new }
+    Ourmodel.all.each do |omodel|
+      @dt[omodel.id] = {:name=>omodel.ourmodel_name, :data=>[["signal", 10], ["weight",  omodel.model_weight]]}
+    end
     render("ourmodels/index.html.erb")
   end
 

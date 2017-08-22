@@ -16,6 +16,10 @@
 
       <dt>Database key</dt>
       <dd><%= @indicator.database_key %></dd>
+      
+      <dt>Plot</dt> 
+      <dd>  <%= line_chart Value.where(indicator_id: @indicator.id).group_by_day(:date).sum(:value), legend: "bottom" %></dd>
+
 
     </dl>
 

@@ -12,4 +12,6 @@
 //
 //= require rails-ujs
 //= require bootstrap
+//= require highcharts 
+//= require chartkick
 //= require_tree .
