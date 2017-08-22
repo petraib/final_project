@@ -5,30 +5,32 @@
   </h1>
 </div>
 
+ 
 <div class="row">
   <div class="col-md-12">
-    <table class="table table-striped table-hover">
-      <tr>
+   
+ 
+     <table class="table table-striped table-hover">
+
+     <tr>
         <th>Name</th>
         <th>Description</th>
-        <th>Expected sign</th>
         <th>Database key</th>
-        <th>Actions</th>
       </tr>
-
+      
       <% @indicators.each do |indicator| %>
-      <tr>
-        <td><%= indicator.name %></td>
+        <tr>
+        <td><a href="/indicators/<%= indicator.id %>"><%= indicator.name %></a></td>
         <td><%= indicator.description %></td>
-        <td><%= indicator.expected_sign %></td>
-        <td><%= indicator.database_key %></td>
-        <td>
-          <a href="/indicators/<%= indicator.id %>" class="btn btn-primary">Show</a>
-          <a href="/indicators/<%= indicator.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_indicator/<%= indicator.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
-        </td>
-      </tr>
+        <td><a href="/indicators/<%= indicator.id %>"><%= indicator.database_key %></td>
+
+       </tr>  
       <% end %>
-    </table>
+      </table>
+    
   </div>
 </div>
+
+
+<%= alphabetical_paginate @alphaParams %>
+ <div id="pagination_table"></div>

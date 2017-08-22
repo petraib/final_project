@@ -99,6 +99,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
+    alphabetical_paginate (2.3.2)
     annotate (2.7.2)
       activerecord (>= 3.2, < 6.0)
       rake (>= 10.4, < 13.0)
@@ -125,7 +126,7 @@ GEM
       popper_js (~> 1.11.1)
       sass (>= 3.4.19)
     builder (3.2.3)
-    byebug (9.0.6)
+    byebug (9.1.0)
     callsite (0.0.11)
     capybara (2.15.1)
       addressable
@@ -351,6 +352,7 @@ PLATFORMS
 
 DEPENDENCIES
   activeadmin!
+  alphabetical_paginate
   annotate
   awesome_print
   better_errors

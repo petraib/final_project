@@ -9,11 +9,13 @@
   <div class="col-md-12">
     <table class="table table-striped table-hover">
       <tr>
+        <th>Name</th>
         <th>Actions</th>
       </tr>
 
       <% @authors.each do |author| %>
       <tr>
+        <td><a href="/authors/<%= author.id %>"><%= author.name %></a></td>
         <td>
           <a href="/authors/<%= author.id %>" class="btn btn-primary">Show</a>
           <a href="/authors/<%= author.id %>/edit" class="btn btn-warning">Edit</a>

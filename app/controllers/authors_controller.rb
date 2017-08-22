@@ -20,7 +20,7 @@ class AuthorsController < ApplicationController
   def create
     @author = Author.new
 
-
+    @author.name = params[:name]
     save_status = @author.save
 
     if save_status == true
@@ -38,7 +38,7 @@ class AuthorsController < ApplicationController
 
   def update
     @author = Author.find(params[:id])
-
+    @author.name = params[:name]
 
     save_status = @author.save
 
