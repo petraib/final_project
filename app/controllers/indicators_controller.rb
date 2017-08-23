@@ -1,7 +1,7 @@
 class IndicatorsController < ApplicationController
   def index
     #@indicators = Indicator.all
-    @indicators, @alphaParams = Indicator.all.alpha_paginate(params[:letter],{:bootstrap3 => true, :js => false}){|indicator| indicator.database_key}
+    @indicators, @alphaParams = Indicator.all.alpha_paginate(params[:letter],{:bootstrap3 => true, :js => false}){|indicator| indicator.name}
 
     render("indicators/index.html.erb")
   end

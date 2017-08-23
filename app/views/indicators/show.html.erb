@@ -14,9 +14,6 @@
       <dt>Expected sign</dt>
       <dd><%= @indicator.expected_sign %></dd>
 
-      <dt>Database key</dt>
-      <dd><%= @indicator.database_key %></dd>
-      
       <dt>Plot</dt> 
       <% if @indicator.expected_sign.to_i * @indicator.values.last.value.floor >= 0 %>
       <dd>  <%= line_chart Value.where(indicator_id: @indicator.id).group_by_day(:date).sum(:value), legend: "bottom",colors: ["green"] %></dd>
