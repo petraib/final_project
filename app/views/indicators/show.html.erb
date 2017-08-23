@@ -1,5 +1,5 @@
 <div class="page-header">
-  <h3>Indicator #<%= @indicator.id %></h3>
+  <h3><%= @indicator.name %></h3>
 </div>
 
 <div class="row">
@@ -18,11 +18,22 @@
       <dd><%= @indicator.database_key %></dd>
       
       <dt>Plot</dt> 
-      <dd>  <%= line_chart Value.where(indicator_id: @indicator.id).group_by_day(:date).sum(:value), legend: "bottom" %></dd>
-
-
+      <% if @indicator.expected_sign.to_i * @indicator.values.last.value.floor >= 0 %>
+      <dd>  <%= line_chart Value.where(indicator_id: @indicator.id).group_by_day(:date).sum(:value), legend: "bottom",colors: ["green"] %></dd>
+      <% else %>
+      <dd>  <%= line_chart Value.where(indicator_id: @indicator.id).group_by_day(:date).sum(:value), legend: "bottom",colors: ["red"] %></dd>
+      <% end %>
+      
+      <dt>Sentiment</dt> 
+      <% if @indicator.expected_sign.to_i * @indicator.values.last.value.floor >=0 %>
+      <dd> Bullish  </dd>
+      <% else %>
+      <dd> Bearish</dd>
+      <% end %>
+      
     </dl>
-
+    
+    <% if current_user.username == "admin" %>
     <div class="btn-group btn-group-justified">
       <a href="/indicators" class="btn btn-primary">
         Back
@@ -34,5 +45,92 @@
         Delete
       </a>
     </div>
+    <%end%>
+    
+  </div>
+</div>
+
+ 
+<div class="page-header">
+  <h3>
+    Sources
+  </h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Author</th>
+        <th>Name</th>
+        <th>Url</th>
+      </tr>
+
+      <% @indicator.sources.each do |source| %>
+      <tr>
+        <td><%= Author.find(source.author_id).name %></td>
+        <td><%= source.name %></td>
+        <td><a href=<%=source.url%> ><%= source.url %></a></td>
+        
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>    
+
+
+<div class="row">
+  <div class="col-md-12">
+  <h3>Add Source</h3>  
+  </div>
+</div>    
+
+<div class="row">
+  <div class="col-md-12">
+   <form action="/create_source" method="post">
+     
+        <!-- Hidden input for authenticity token to protect from forgery -->
+        <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+        <input type="hidden" name="indicator_id" value= <%=@indicator.id%>>
+
+        
+        
+      
+       <!-- Label and input for author_id -->
+      <div class="form-group">
+        <label for="author_id" class="control-label">
+          Author
+        </label>
+
+        <%= select_tag("author_id", options_from_collection_for_select(Author.all, :id, :name), :class => "form-control") %>
+
+      </div>
+
+     
+
+      <!-- Label and input for name -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Name
+        </label>
+
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="">
+      </div>
+      
+      <!-- Label and input for url -->
+      <div class="form-group">
+        <label for="url" class="control-label">
+          URL
+        </label>
+
+        <input type="text" id="url" name="url" placeholder="url" class="form-control" value="">
+      </div>
+      
+        <button class="btn btn-success">
+          <i class="fa fa-plus">Add Source</i>
+        </button>
+
+    </form>
   </div>
 </div>

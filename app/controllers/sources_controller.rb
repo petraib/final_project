@@ -28,7 +28,7 @@ class SourcesController < ApplicationController
     save_status = @source.save
 
     if save_status == true
-      redirect_to("/sources/#{@source.id}", :notice => "Source created successfully.")
+      redirect_to("/indicators/#{@source.indicator_id}", :notice => "Source created successfully.")
     else
       render("sources/new.html.erb")
     end

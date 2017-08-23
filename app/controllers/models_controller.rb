@@ -11,6 +11,33 @@ class ModelsController < ApplicationController
 
   def show
     @model = Model.find(params[:id])
+    
+    @result = 0
+    
+    @history_length = 15000
+    @dt = Array.new(Ourmodel.count) { Hash.new }
+     
+    @model.variables.each do |variable|
+    i = Indicator.find(variable.indicator_id)
+    @result += i.values.last.value.to_f * i.expected_sign.to_f * variable.weight.to_f
+    
+    @history_length = [@history_length, i.values.count].min
+    end
+    
+
+    @dt = Array.new(@history_length) 
+    variable = @model.variables.find(1) 
+    
+    indicator = Indicator.find(variable.indicator_id)
+      for i in 0..(@dt.count-1)
+          @dt[i] = indicator.values[i].value * indicator.expected_sign * variable.weight.to_f
+
+      end
+    @max = @dt.compact.max
+    @min = @dt.compact.min
+    
+    @scaled_result = (@result - @min ) / (@max - @min) *100
+    #i.values.order("value DESC").last
 
     render("models/show.html.erb")
   end

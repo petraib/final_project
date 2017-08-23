@@ -9,18 +9,22 @@
   <div class="col-md-12">
     <table class="table table-striped table-hover">
       <tr>
-        <th>User</th>
+        <th>Model Name</th>
+        <th>Owner</th>
         <th>Actions</th>
       </tr>
 
       <% @models.each do |model| %>
       <tr>
+         <% if current_user.id== model.user_id %>   
+        <td><%= model.mname %></td>
         <td><%= User.find(model.user_id).username %></td>
         <td>
           <a href="/models/<%= model.id %>" class="btn btn-primary">Show</a>
           <a href="/models/<%= model.id %>/edit" class="btn btn-warning">Edit</a>
           <a href="/delete_model/<%= model.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
         </td>
+        <% end %>
       </tr>
       <% end %>
     </table>

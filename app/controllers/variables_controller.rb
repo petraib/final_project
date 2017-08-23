@@ -28,7 +28,7 @@ class VariablesController < ApplicationController
     save_status = @variable.save
 
     if save_status == true
-      redirect_to("/variables/#{@variable.id}", :notice => "Variable created successfully.")
+      redirect_to("/models/#{@variable.model_id}", :notice => "Variable created successfully.")
     else
       render("variables/new.html.erb")
     end

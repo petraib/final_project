@@ -1,7 +1,7 @@
 class OurmodelsController < ApplicationController
   def index
     @ourmodels = Ourmodel.all
-  @exposure = 90
+    @exposure = 90
     #Indicator.group(:name).count
     #Indicator.pluck(:name, 1)
     
