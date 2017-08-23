@@ -15,7 +15,7 @@
 
       <% @models.each do |model| %>
       <tr>
-        <td><%= model.user_id %></td>
+        <td><%= User.find(model.user_id).username %></td>
         <td>
           <a href="/models/<%= model.id %>" class="btn btn-primary">Show</a>
           <a href="/models/<%= model.id %>/edit" class="btn btn-warning">Edit</a>
