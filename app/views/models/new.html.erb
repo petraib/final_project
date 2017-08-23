@@ -26,6 +26,15 @@
 
         <input type="text" id="user_id" name="user_id" placeholder="User" class="form-control" value="<%= @model.user_id %>">
       </div>
+      
+      <!-- Label and input for mname -->
+      <div class="form-group">
+        <label for="ourmodel_name" class="control-label">
+          Model name
+        </label>
+
+        <input type="text" id="mname" name="mname" placeholder="Model name" class="form-control" value="<%= @model.mname %>">
+      </div>
 
       <button class="btn btn-success">
         Create Model

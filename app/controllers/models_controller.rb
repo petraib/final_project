@@ -21,6 +21,7 @@ class ModelsController < ApplicationController
     @model = Model.new
 
     @model.user_id = params[:user_id]
+    @model.mname = params[:mname]
 
     save_status = @model.save
 
@@ -41,6 +42,7 @@ class ModelsController < ApplicationController
     @model = Model.find(params[:id])
 
     @model.user_id = params[:user_id]
+    @model.mname = params[:mname]
 
     save_status = @model.save
 
