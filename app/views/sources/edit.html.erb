@@ -1,0 +1,69 @@
+<!-- Validation failure messages -->
+<% if @source.errors.any? %>
+  <% @source.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Source #<%= @source.id %></h3>
+</div>
+
+
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_source/<%= @source.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for author_id -->
+      <div class="form-group">
+        <label for="author_id" class="control-label">
+          Author
+        </label>
+
+        <!--<input type="text" id="author_id" name="author_id" placeholder="Movie" class="form-control" value="<%= @source.author_id %>">-->
+        <%= select_tag("author_id", options_from_collection_for_select(Author.all, :id, :name, @source.author_id), :class => "form-control", :value =>@source.author_id) %>
+
+      </div>
+
+      <!-- Label and input for indicator_id -->
+      <div class="form-group">
+        <label for="indicator_id" class="control-label">
+          Indicator
+        </label>
+
+        <%= select_tag("indicator_id", options_from_collection_for_select(Indicator.all, :id, :name, @source.indicator_id), :class => "form-control", :value =>@source.indicator_id) %>
+
+      </div>
+
+      <!-- Label and input for name -->
+      <div class="form-group">
+        <label for="name" class="control-label">
+          Name
+        </label>
+
+        <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @source.name %>">
+      </div>
+      
+      <!-- Label and input for url -->
+      <div class="form-group">
+        <label for="url" class="control-label">
+          URL
+        </label>
+
+        <input type="text" id="url" name="url" placeholder="url" class="form-control" value="<%= @source.url %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Source
+      </button>
+      or
+      <a href="/sources/<%= @source.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

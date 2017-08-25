@@ -1,0 +1,33 @@
+<div class="page-header">
+  <h1>
+    Indicators
+    
+  </h1>
+  
+</div>
+
+<%= alphabetical_paginate @alphaParams %>
+
+<div id="pagination_table"></div>
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Expected sign</th>
+       
+      </tr>
+
+      <% @indicators.each do |indicator| %>
+      <tr>
+        <td><a href="/indicators/<%= indicator.id %>" ><%= indicator.name %></a></td>
+        <td><%= indicator.description %></td>
+        <td><%= indicator.expected_sign %></td>
+        
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+

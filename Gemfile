@@ -5,6 +5,14 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem "starter_generators", :git => "https://github.com/raghubetina/starter_generators"
+
+
+gem "groupdate", :git =>"git@github.com:ankane/groupdate.git"
+
+gem "chartkick"
+
+gem 'alphabetical_paginate'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.3'

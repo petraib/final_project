@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170810230637) do
+ActiveRecord::Schema.define(version: 20170825055802) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -41,6 +41,82 @@ ActiveRecord::Schema.define(version: 20170810230637) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
+
+  create_table "authors", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "string"
+  end
+
+  create_table "indicators", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.integer "expected_sign"
+    t.string "database_key"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "models", force: :cascade do |t|
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "mname"
+  end
+
+  create_table "ourmodels", force: :cascade do |t|
+    t.string "model_weight"
+    t.string "ourmodel_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "description"
+  end
+
+  create_table "sources", force: :cascade do |t|
+    t.integer "author_id"
+    t.string "name"
+    t.string "url"
+    t.integer "indicator_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer "sign_in_count", default: 0, null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string "current_sign_in_ip"
+    t.string "last_sign_in_ip"
+    t.string "username"
+    t.string "avatar_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  end
+
+  create_table "values", force: :cascade do |t|
+    t.integer "indicator_id"
+    t.date "date"
+    t.float "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "variables", force: :cascade do |t|
+    t.integer "indicator_id"
+    t.integer "model_id"
+    t.string "weight"
+    t.integer "ourmodel_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

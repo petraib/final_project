@@ -1,0 +1,34 @@
+<div class="page-header">
+  <h3>Source #<%= @source.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Author</dt>
+      <dd><%= @source.author_id %></dd>
+
+      <dt>Name</dt>
+      <dd><%= @source.name %></dd>
+
+      <dt>Url</dt>
+      <dd><%= @source.url %></dd>
+
+      <dt>Indicator</dt>
+      <dd><%= @source.indicator_id %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/sources" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/sources/<%= @source.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_source/<%= @source.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>

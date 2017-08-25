@@ -1,0 +1,147 @@
+=> [[32m#<Ourmodel:0x007f8cb815e040[0m
+  id: [1;34m2[0m,
+  model_weight: [31m[1;31m"[0m[31m0.25[1;31m"[0m[31m[0m,
+  ourmodel_name: [31m[1;31m"[0m[31mMOMO[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mTue[0m, [1;34m22[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m01[0m:[1;34m45[0m:[1;34m21[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mFri[0m, [1;34m25[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m06[0m:[1;34m55[0m:[1;34m51[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31mEconomic surprise model, 1-month ERP forecast[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<Ourmodel:0x007f8cb815df00[0m
+  id: [1;34m3[0m,
+  model_weight: [31m[1;31m"[0m[31m0.5[1;31m"[0m[31m[0m,
+  ourmodel_name: [31m[1;31m"[0m[31mHTUS[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mFri[0m, [1;34m25[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m06[0m:[1;34m09[0m:[1;34m56[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mFri[0m, [1;34m25[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m06[0m:[1;34m56[0m:[1;34m51[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31mSix-month ERP forecast model based on macro indicators[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<Ourmodel:0x007f8cb815ddc0[0m
+  id: [1;34m4[0m,
+  model_weight: [31m[1;31m"[0m[31m0.25[1;31m"[0m[31m[0m,
+  ourmodel_name: [31m[1;31m"[0m[31mSTM[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mFri[0m, [1;34m25[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m07[0m:[1;34m42[0m:[1;34m01[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mFri[0m, [1;34m25[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m07[0m:[1;34m48[0m:[1;34m16[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31mSimple Trend Model[1;31m"[0m[31m[0m[32m>[0m]
+=> [[32m#<Ourmodel:0x007f8cc5a22750[0m
+  id: [1;34m2[0m,
+  model_weight: [31m[1;31m"[0m[31m0.25[1;31m"[0m[31m[0m,
+  ourmodel_name: [31m[1;31m"[0m[31mMOMO[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mTue[0m, [1;34m22[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m01[0m:[1;34m45[0m:[1;34m21[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mFri[0m, [1;34m25[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m06[0m:[1;34m55[0m:[1;34m51[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31mEconomic surprise model, 1-month ERP forecast[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<Ourmodel:0x007f8cc5a22610[0m
+  id: [1;34m3[0m,
+  model_weight: [31m[1;31m"[0m[31m0.5[1;31m"[0m[31m[0m,
+  ourmodel_name: [31m[1;31m"[0m[31mHTUS[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mFri[0m, [1;34m25[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m06[0m:[1;34m09[0m:[1;34m56[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mFri[0m, [1;34m25[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m06[0m:[1;34m56[0m:[1;34m51[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31mSix-month ERP forecast model based on macro indicators[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<Ourmodel:0x007f8cc5a224d0[0m
+  id: [1;34m4[0m,
+  model_weight: [31m[1;31m"[0m[31m0.25[1;31m"[0m[31m[0m,
+  ourmodel_name: [31m[1;31m"[0m[31mSTM[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mFri[0m, [1;34m25[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m07[0m:[1;34m42[0m:[1;34m01[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mFri[0m, [1;34m25[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m07[0m:[1;34m48[0m:[1;34m16[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31mSimple Trend Model[1;31m"[0m[31m[0m[32m>[0m]
+=> [[32m#<Ourmodel:0x00000007aa9298[0m
+  id: [1;34m2[0m,
+  model_weight: [31m[1;31m"[0m[31m0.25[1;31m"[0m[31m[0m,
+  ourmodel_name: [31m[1;31m"[0m[31mMOMO[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mTue[0m, [1;34m22[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m01[0m:[1;34m45[0m:[1;34m21[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mFri[0m, [1;34m25[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m06[0m:[1;34m55[0m:[1;34m51[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31mEconomic surprise model, 1-month ERP forecast[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<Ourmodel:0x00000007aa9158[0m
+  id: [1;34m3[0m,
+  model_weight: [31m[1;31m"[0m[31m0.5[1;31m"[0m[31m[0m,
+  ourmodel_name: [31m[1;31m"[0m[31mHTUS[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mFri[0m, [1;34m25[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m06[0m:[1;34m09[0m:[1;34m56[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mFri[0m, [1;34m25[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m06[0m:[1;34m56[0m:[1;34m51[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31mSix-month ERP forecast model based on macro indicators[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<Ourmodel:0x00000007aa9018[0m
+  id: [1;34m4[0m,
+  model_weight: [31m[1;31m"[0m[31m0.25[1;31m"[0m[31m[0m,
+  ourmodel_name: [31m[1;31m"[0m[31mSTM[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mFri[0m, [1;34m25[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m07[0m:[1;34m42[0m:[1;34m01[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mFri[0m, [1;34m25[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m07[0m:[1;34m48[0m:[1;34m16[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31mSimple Trend Model[1;31m"[0m[31m[0m[32m>[0m]
+=> [[32m#<Ourmodel:0x007f8cc516ad88[0m
+  id: [1;34m2[0m,
+  model_weight: [31m[1;31m"[0m[31m0.25[1;31m"[0m[31m[0m,
+  ourmodel_name: [31m[1;31m"[0m[31mMOMO[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mTue[0m, [1;34m22[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m01[0m:[1;34m45[0m:[1;34m21[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mFri[0m, [1;34m25[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m06[0m:[1;34m55[0m:[1;34m51[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31mEconomic surprise model, 1-month ERP forecast[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<Ourmodel:0x007f8cc516ac48[0m
+  id: [1;34m3[0m,
+  model_weight: [31m[1;31m"[0m[31m0.5[1;31m"[0m[31m[0m,
+  ourmodel_name: [31m[1;31m"[0m[31mHTUS[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mFri[0m, [1;34m25[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m06[0m:[1;34m09[0m:[1;34m56[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mFri[0m, [1;34m25[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m06[0m:[1;34m56[0m:[1;34m51[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31mSix-month ERP forecast model based on macro indicators[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<Ourmodel:0x007f8cc516ab08[0m
+  id: [1;34m4[0m,
+  model_weight: [31m[1;31m"[0m[31m0.25[1;31m"[0m[31m[0m,
+  ourmodel_name: [31m[1;31m"[0m[31mSTM[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mFri[0m, [1;34m25[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m07[0m:[1;34m42[0m:[1;34m01[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mFri[0m, [1;34m25[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m07[0m:[1;34m48[0m:[1;34m16[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31mSimple Trend Model[1;31m"[0m[31m[0m[32m>[0m]
+=> [[32m#<Ourmodel:0x007f8cc415b528[0m
+  id: [1;34m2[0m,
+  model_weight: [31m[1;31m"[0m[31m0.25[1;31m"[0m[31m[0m,
+  ourmodel_name: [31m[1;31m"[0m[31mMOMO[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mTue[0m, [1;34m22[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m01[0m:[1;34m45[0m:[1;34m21[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mFri[0m, [1;34m25[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m06[0m:[1;34m55[0m:[1;34m51[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31mEconomic surprise model, 1-month ERP forecast[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<Ourmodel:0x007f8cc415b348[0m
+  id: [1;34m3[0m,
+  model_weight: [31m[1;31m"[0m[31m0.5[1;31m"[0m[31m[0m,
+  ourmodel_name: [31m[1;31m"[0m[31mHTUS[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mFri[0m, [1;34m25[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m06[0m:[1;34m09[0m:[1;34m56[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mFri[0m, [1;34m25[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m06[0m:[1;34m56[0m:[1;34m51[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31mSix-month ERP forecast model based on macro indicators[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<Ourmodel:0x007f8cc415afb0[0m
+  id: [1;34m4[0m,
+  model_weight: [31m[1;31m"[0m[31m0.25[1;31m"[0m[31m[0m,
+  ourmodel_name: [31m[1;31m"[0m[31mSTM[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mFri[0m, [1;34m25[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m07[0m:[1;34m42[0m:[1;34m01[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mFri[0m, [1;34m25[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m07[0m:[1;34m48[0m:[1;34m16[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31mSimple Trend Model[1;31m"[0m[31m[0m[32m>[0m]
+=> [[32m#<Ourmodel:0x007f8cc4ffcff0[0m
+  id: [1;34m2[0m,
+  model_weight: [31m[1;31m"[0m[31m0.25[1;31m"[0m[31m[0m,
+  ourmodel_name: [31m[1;31m"[0m[31mMOMO[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mTue[0m, [1;34m22[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m01[0m:[1;34m45[0m:[1;34m21[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mFri[0m, [1;34m25[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m06[0m:[1;34m55[0m:[1;34m51[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31mEconomic surprise model, 1-month ERP forecast[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<Ourmodel:0x007f8cc4ffceb0[0m
+  id: [1;34m3[0m,
+  model_weight: [31m[1;31m"[0m[31m0.5[1;31m"[0m[31m[0m,
+  ourmodel_name: [31m[1;31m"[0m[31mHTUS[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mFri[0m, [1;34m25[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m06[0m:[1;34m09[0m:[1;34m56[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mFri[0m, [1;34m25[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m06[0m:[1;34m56[0m:[1;34m51[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31mSix-month ERP forecast model based on macro indicators[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<Ourmodel:0x007f8cc4ffcd70[0m
+  id: [1;34m4[0m,
+  model_weight: [31m[1;31m"[0m[31m0.25[1;31m"[0m[31m[0m,
+  ourmodel_name: [31m[1;31m"[0m[31mSTM[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mFri[0m, [1;34m25[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m07[0m:[1;34m42[0m:[1;34m01[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mFri[0m, [1;34m25[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m07[0m:[1;34m48[0m:[1;34m16[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31mSimple Trend Model[1;31m"[0m[31m[0m[32m>[0m]
+=> [[32m#<Ourmodel:0x007f8cc50c4b40[0m
+  id: [1;34m2[0m,
+  model_weight: [31m[1;31m"[0m[31m0.25[1;31m"[0m[31m[0m,
+  ourmodel_name: [31m[1;31m"[0m[31mMOMO[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mTue[0m, [1;34m22[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m01[0m:[1;34m45[0m:[1;34m21[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mFri[0m, [1;34m25[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m06[0m:[1;34m55[0m:[1;34m51[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31mEconomic surprise model, 1-month ERP forecast[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<Ourmodel:0x007f8cc50c4a00[0m
+  id: [1;34m3[0m,
+  model_weight: [31m[1;31m"[0m[31m0.5[1;31m"[0m[31m[0m,
+  ourmodel_name: [31m[1;31m"[0m[31mHTUS[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mFri[0m, [1;34m25[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m06[0m:[1;34m09[0m:[1;34m56[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mFri[0m, [1;34m25[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m06[0m:[1;34m56[0m:[1;34m51[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31mSix-month ERP forecast model based on macro indicators[1;31m"[0m[31m[0m[32m>[0m,
+ [32m#<Ourmodel:0x007f8cc50c48c0[0m
+  id: [1;34m4[0m,
+  model_weight: [31m[1;31m"[0m[31m0.25[1;31m"[0m[31m[0m,
+  ourmodel_name: [31m[1;31m"[0m[31mSTM[1;31m"[0m[31m[0m,
+  created_at: [1;34;4mFri[0m, [1;34m25[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m07[0m:[1;34m42[0m:[1;34m01[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  updated_at: [1;34;4mFri[0m, [1;34m25[0m [1;34;4mAug[0m [1;34m2017[0m [1;34m07[0m:[1;34m48[0m:[1;34m16[0m [1;34;4mUTC[0m [1;34m+00[0m:[1;34m00[0m,
+  description: [31m[1;31m"[0m[31mSimple Trend Model[1;31m"[0m[31m[0m[32m>[0m]

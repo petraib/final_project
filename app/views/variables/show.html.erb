@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h3>
+    <a href="/variables" class = "btn btn-link"> <i class = "fa fa-arrow-left" aria-hidden="true"></i></a>
+    Variable #<%= @variable.id %>
+    <a href="/variables/<%= @variable.id %>/edit" class="btn btn-link"> <i class = "fa fa-pencil" aria-hidden="true"></i> </a>
+    <a href="/delete_variable/<%= @variable.id %>" class="btn btn-link" rel="nofollow"> <i class = "fa fa-trash-o" aria-hidden="true"></i> </a>
+ 
+  </h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Indicator</dt>
+      <dd><%= Indicator.find( @variable.indicator_id).name %></dd>
+
+      <dt>Model</dt>
+      <dd><%= Model.find(@variable.model_id).mname %></dd>
+
+      <dt>Weight</dt>
+      <dd><%= @variable.weight %></dd>
+
+   
+    </dl>
+
+    
+  </div>
+</div>

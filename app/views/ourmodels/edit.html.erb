@@ -1,0 +1,128 @@
+<!-- Validation failure messages -->
+<% if @ourmodel.errors.any? %>
+  <% @ourmodel.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Ourmodel #<%= @ourmodel.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_ourmodel/<%= @ourmodel.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for model_weight -->
+      <div class="form-group">
+        <label for="model_weight" class="control-label">
+          Model weight
+        </label>
+
+        <input type="text" id="model_weight" name="model_weight" placeholder="Model weight" class="form-control" value="<%= @ourmodel.model_weight %>">
+      </div>
+
+      <!-- Label and input for ourmodel_name -->
+      <div class="form-group">
+        <label for="ourmodel_name" class="control-label">
+          Ourmodel name
+        </label>
+
+        <input type="text" id="ourmodel_name" name="ourmodel_name" placeholder="Ourmodel name" class="form-control" value="<%= @ourmodel.ourmodel_name %>">
+      </div>
+
+      <!-- Label and input for description -->
+      <div class="form-group">
+        <label for="description" class="control-label">
+          Description
+        </label>
+
+        <input type="text" id="description" name="description" placeholder="Model Description" class="form-control" value="<%= @ourmodel.description %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Ourmodel
+      </button>
+      or
+      <a href="/ourmodels/<%= @ourmodel.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+  <h3>Model Variables</h3>  
+  </div>
+</div>    
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Indicator</th>
+        <th>Weight</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @ourmodel.variables.each do |variable| %>
+      <tr>
+        <td><%= Indicator.find(variable.indicator_id).name %></td>
+        <td><%= variable.weight %></td>
+        
+        <td>
+          <a href="/variables/<%= variable.id %>" class="btn btn-primary">Show</a>
+          <a href="/variables/<%= variable.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_variable/<%= variable.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-md-12">
+  <h3>Add Variables</h3>  
+  </div>
+</div>    
+
+<div class="row">
+  <div class="col-md-12">
+   <form action="/create_variable" method="post">
+     
+        <!-- Hidden input for authenticity token to protect from forgery -->
+        <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+        <input type="hidden" name="ourmodel_id" value= <%=@ourmodel.id%>>
+
+         <!-- Label and input forweight -->
+        <div class="form-group">
+        <label for="indicator_id" class="control-label">
+          Weight
+        </label>
+        
+        <input type="text" name="weight" value= <%="0"%>>
+
+         <!-- Label and input for indicator_id -->
+        <div class="form-group">
+        <label for="indicator_id" class="control-label">
+          Indicator
+        </label>
+
+        <%= select_tag("indicator_id", options_from_collection_for_select(Indicator.all, :id, :name), :class => "form-control") %>
+
+        </div>
+      
+        <button class="btn btn-success">
+          <i class="fa fa-plus">Add Variable</i>
+        </button>
+
+    </form>
+  </div>
+</div>

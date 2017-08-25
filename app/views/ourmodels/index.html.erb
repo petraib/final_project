@@ -1,0 +1,83 @@
+<div class="page-header">
+  <h1>
+    T<i class = "fa fa-hourglass-2"></i>mr Report
+  </h1>
+  <p>date:<%= Date.today %></p>
+</div>
+
+<h3> Optimal Combined Market Exposure: </h3>
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+ <script type="text/javascript">
+      google.charts.load('current', {'packages':['gauge']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Label', 'Value'],
+          ['Exposure', <%=@exposure %>]
+        ]);
+
+        var options = {
+          width: 300, height: 300,
+          redFrom: -100, redTo: 0,
+          yellowFrom:0,greenTo: 100,
+          greenFrom:100,greenTo: 200,
+          minorTicks: 5,
+          min: -100, max: 200
+        };
+
+        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+
+        
+      }
+    </script>
+
+<div class = "chart_container" id="chart_div" style="width: 300px; height: 300px; margin-top: 50px; margin-left: 100px"> </div>
+
+<h3> Individual Models and Weights: </h3>
+
+<div class="row">
+  <div class="col-md-12">
+
+    <%= bar_chart @signals, stacked: true %> 
+    <%= bar_chart @weights, stacked: true %> 
+
+
+ </div>
+</div>
+
+<h3> Model Details: </h3>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Model weight</th>
+         <th>Model name</th>
+         <th>Description</th>
+       
+      </tr>
+
+      <% @ourmodels.each do |ourmodel| %>
+      <tr>
+        <td><%= ourmodel.model_weight %></td>
+        <td><a href="/ourmodels/<%= ourmodel.id %>"><%= ourmodel.ourmodel_name %></a></td>
+        <td><%= ourmodel.description %></td>
+
+
+        
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+</html>
+
+
+
+ 
+
