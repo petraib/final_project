@@ -1,6 +1,9 @@
 class AuthorsController < ApplicationController
   def index
-    @authors = Author.all
+   # @authors = Author.all
+    
+    @authors, @alphaParams = Author.all.alpha_paginate(params[:letter],{:bootstrap3 => true, :js => false}){|author| author.name}
+
 
     render("authors/index.html.erb")
   end
