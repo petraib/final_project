@@ -1,14 +1,76 @@
 class OurmodelsController < ApplicationController
   def index
     @ourmodels = Ourmodel.all
-    @exposure = 90
     #Indicator.group(:name).count
     #Indicator.pluck(:name, 1)
     
-    @dt = Array.new(Ourmodel.count) { Hash.new }
-    Ourmodel.all.each do |omodel|
-      @dt[omodel.id] = {:name=>omodel.ourmodel_name, :data=>[["signal", 10], ["weight",  omodel.model_weight]]}
+     ### calculate all model signals
+    @result = Array.new(@ourmodels.count,0) 
+    @scaled_result = Array.new(@ourmodels.count,0) 
+    @max = Array.new(@ourmodels.count,0) 
+    @min = Array.new(@ourmodels.count,0) 
+    @wts = Array.new(@ourmodels.count,0) 
+    
+    i = 0
+    Ourmodel.all.each do |ourmodel|
+      
+            @history_length = 15000
+
+            if(ourmodel.variables != [])
+              ourmodel.variables.each do |variable|
+                ind = Indicator.find(variable.indicator_id)
+                @result[i] += ind.values.last.value.to_f * ind.expected_sign.to_f * variable.weight.to_f
+                @history_length = [@history_length, ind.values.count].min
+              end
+              
+              #set boundaries:
+              @dt = Array.new(@history_length) 
+              
+              ourmodel.variables.each do |variable|
+                indicator = Indicator.find(variable.indicator_id)
+                  for j in 0..(@dt.count-1)
+                    
+                      @dt[j] += indicator.values[j].value.to_f * indicator.expected_sign.to_f * variable.weight.to_f
+            
+                  end
+              end
+              @max[i] = @dt.compact.max
+              @min[i] = @dt.compact.min
+              
+              @scaled_result[i] = (@result[i] - @min[i] ) / (@max[i] - @min[i]) *100
+              @wts[i] = ourmodel.model_weight.to_f
+              
+            else
+              @result[i] = 0
+              @max[i] = 100
+              @min[i] = -100
+              
+              @scaled_result[i] = (@result[i] - @min[i] ) / (@max[i] - @min[i]) *100
+              @wts[i] = 0
+            end
+            i+=1
     end
+    
+    
+    ### plots
+    @signals = Array.new(Ourmodel.count) { Hash.new }
+    @weights = Array.new(Ourmodel.count) { Hash.new }
+
+    counter = 0
+    @exposure = 0
+    Ourmodel.all.each do |omodel|
+      @signals[counter] = {:name=>omodel.ourmodel_name, :data=>[["signal", @scaled_result[counter].round(2)]]}
+      @weights[counter] = {:name=>omodel.ourmodel_name, :data=>[ ["weight",  omodel.model_weight]]}
+      @exposure += @scaled_result[counter] * @wts[counter]
+
+      counter +=1
+
+    end
+    
+
+    
+    
+   
     render("ourmodels/index.html.erb")
   end
 
@@ -50,7 +112,7 @@ class OurmodelsController < ApplicationController
       
       @scaled_result = (@result - @min ) / (@max - @min) *100
     end
-
+    
     render("ourmodels/show.html.erb")
   end
 
@@ -65,6 +127,7 @@ class OurmodelsController < ApplicationController
 
     @ourmodel.model_weight = params[:model_weight]
     @ourmodel.ourmodel_name = params[:ourmodel_name]
+    @ourmodel.description = params[:description]
 
     save_status = @ourmodel.save
 
@@ -86,6 +149,7 @@ class OurmodelsController < ApplicationController
 
     @ourmodel.model_weight = params[:model_weight]
     @ourmodel.ourmodel_name = params[:ourmodel_name]
+    @ourmodel.description = params[:description]
 
     save_status = @ourmodel.save
 
