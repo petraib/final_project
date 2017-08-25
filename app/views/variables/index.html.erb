@@ -16,21 +16,23 @@
       </tr>
 
       <% @variables.each do |variable| %>
-      <tr>
+      
+        <% if variable.model_id != nil %>
         <% if current_user.id== Model.find(variable.model_id).user_id %>   
-
-        <td><%= Indicator.find(variable.indicator_id).name %></td>
-        <td><%= Model.find(variable.model_id).mname %></td>
-        <td><%= variable.weight %></td>
-        <td>
-          <a href="/variables/<%= variable.id %>" class="btn btn-primary">Show</a>
-          <a href="/variables/<%= variable.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_variable/<%= variable.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
-        </td>
-        
+          <tr>
+            <td><%= Indicator.find(variable.indicator_id).name %></td>
+            <td><%= Model.find(variable.model_id).mname %></td>
+            <td><%= variable.weight %></td>
+            <td>
+              <a href="/variables/<%= variable.id %>" class="btn btn-primary">Show</a>
+              <a href="/variables/<%= variable.id %>/edit" class="btn btn-warning">Edit</a>
+              <a href="/delete_variable/<%= variable.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+            </td>
+          </tr>
+  
+        <% end %>
         <% end %>
         
-      </tr>
       <% end %>
     </table>
   </div>

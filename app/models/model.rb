@@ -12,6 +12,7 @@
 class Model < ApplicationRecord
     
     belongs_to :user
-    has_many :variables, :dependent => :destroy
+    has_many :variables, :dependent => :nullify
+    #, :dependent => :destroy
     has_many :indicators, :through => :variables, :source => :indicator
 end

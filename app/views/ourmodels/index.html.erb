@@ -56,18 +56,21 @@
       <tr>
         <th>Model weight</th>
          <th>Model name</th>
+         <th>Description</th>
         <th>Actions</th>
       </tr>
 
       <% @ourmodels.each do |ourmodel| %>
       <tr>
         <td><%= ourmodel.model_weight %></td>
-        <td><%= ourmodel.ourmodel_name %></td>
+        <td><a href="/ourmodels/<%= ourmodel.id %>"><%= ourmodel.ourmodel_name %></a></td>
+        <td><%= ourmodel.description %></td>
+
 
         <td>
-          <a href="/ourmodels/<%= ourmodel.id %>" class="btn btn-primary">Show</a>
-          <a href="/ourmodels/<%= ourmodel.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_ourmodel/<%= ourmodel.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          
+          <a href="/ourmodels/<%= ourmodel.id %>/edit" class="btn btn-link"><i class = "fa fa-pencil"></i></a>
+          <a href="/delete_ourmodel/<%= ourmodel.id %>" class="btn btn-link" rel="nofollow"><i class = "fa fa-trash-o"></i></a>
         </td>
       </tr>
       <% end %>

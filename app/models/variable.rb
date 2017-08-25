@@ -13,6 +13,6 @@
 
 class Variable < ApplicationRecord
     belongs_to :indicator
-    belongs_to :model
-    belongs_to :ourmodel
+    belongs_to :model, :required => false
+    belongs_to :ourmodel, :required => false
 end

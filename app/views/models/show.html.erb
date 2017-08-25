@@ -72,7 +72,7 @@
 
       <% @model.variables.each do |variable| %>
       <tr>
-        <td><a href="/variables/<%= variable.id %>" ><%= Indicator.find(variable.indicator_id).name %></a></td>
+        <td><a href="/indicators/<%= variable.indicator_id %>" ><%= Indicator.find(variable.indicator_id).name %></a></td>
         <td><%= variable.weight %> </td>
         <td><%= Indicator.find(variable.indicator_id).expected_sign %> </td>
 
@@ -107,7 +107,6 @@
         <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
 
         <input type="hidden" name="model_id" value= <%=@model.id%>>
-        <input type="hidden" name="ourmodel_id" value= "1" >
 
          <!-- Label and input forweight -->
         <div class="form-group">
