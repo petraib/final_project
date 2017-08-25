@@ -24,15 +24,15 @@ class OurmodelsController < ApplicationController
               end
               
               #set boundaries:
-              @dt = Array.new(@history_length) 
+              @dt = Array.new(@history_length,0) ;
               
               ourmodel.variables.each do |variable|
                 indicator = Indicator.find(variable.indicator_id)
-                  for j in 0..(@dt.count-1)
+                for j in 0..(@dt.count-1)
                     
                       @dt[j] += indicator.values[j].value.to_f * indicator.expected_sign.to_f * variable.weight.to_f
             
-                  end
+                end
               end
               @max[i] = @dt.compact.max
               @min[i] = @dt.compact.min
@@ -92,13 +92,16 @@ class OurmodelsController < ApplicationController
       end
       
   
-      @dt = Array.new(@history_length) 
-      variable = @ourmodel.variables.first
+       #set boundaries:
+        @dt = Array.new(@history_length,0) ;
+        
+        @ourmodel.variables.each do |variable|
+          indicator = Indicator.find(variable.indicator_id)
+          for j in 0..(@dt.count-1)
+              
+                @dt[j] += indicator.values[j].value.to_f * indicator.expected_sign.to_f * variable.weight.to_f
       
-      indicator = Indicator.find(variable.indicator_id)
-        for i in 0..(@dt.count-1)
-            @dt[i] = indicator.values[i].value * indicator.expected_sign * variable.weight.to_f
-  
+          end
         end
       @max = @dt.compact.max
       @min = @dt.compact.min

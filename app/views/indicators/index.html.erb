@@ -3,8 +3,7 @@
     Indicators
     
   </h1>
-   <% if current_user.username == "admin" %> <a href="/indicators/new" class="btn btn-lg btn-success">New Indicator</a>
-     <% end %>
+  
 </div>
 
 <%= alphabetical_paginate @alphaParams %>
@@ -17,10 +16,7 @@
         <th>Name</th>
         <th>Description</th>
         <th>Expected sign</th>
-        <% if current_user.username == "admin" %> 
-        <th>Database key</th>
-        <th>Actions</th>
-        <% end %>
+       
       </tr>
 
       <% @indicators.each do |indicator| %>
@@ -28,13 +24,7 @@
         <td><a href="/indicators/<%= indicator.id %>" ><%= indicator.name %></a></td>
         <td><%= indicator.description %></td>
         <td><%= indicator.expected_sign %></td>
-        <% if current_user.username == "admin" %> 
-        <td><%= indicator.database_key %></td>
-        <td>
-          <a href="/indicators/<%= indicator.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_indicator/<%= indicator.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
-        </td>
-        <%end%>
+        
       </tr>
       <% end %>
     </table>

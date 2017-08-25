@@ -58,7 +58,7 @@
         <th>Model weight</th>
          <th>Model name</th>
          <th>Description</th>
-        <th>Actions</th>
+       
       </tr>
 
       <% @ourmodels.each do |ourmodel| %>
@@ -68,11 +68,7 @@
         <td><%= ourmodel.description %></td>
 
 
-        <td>
-          
-          <a href="/ourmodels/<%= ourmodel.id %>/edit" class="btn btn-link"><i class = "fa fa-pencil"></i></a>
-          <a href="/delete_ourmodel/<%= ourmodel.id %>" class="btn btn-link" rel="nofollow"><i class = "fa fa-trash-o"></i></a>
-        </td>
+        
       </tr>
       <% end %>
     </table>

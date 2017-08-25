@@ -18,34 +18,46 @@
       <dd><%= @indicator.expected_sign %></dd>
 
       <dt>Plot</dt> 
-      <% if @indicator.expected_sign.to_i * @indicator.values.last.value.floor >= 0 %>
-      <dd>  <%= line_chart Value.where(indicator_id: @indicator.id).group_by_day(:date).sum(:value), legend: "bottom",colors: ["green"] %></dd>
-      <% else %>
-      <dd>  <%= line_chart Value.where(indicator_id: @indicator.id).group_by_day(:date).sum(:value), legend: "bottom",colors: ["red"] %></dd>
-      <% end %>
+       <% if @indicator.expected_sign.to_i >0 %>
+       
+          <% if  @indicator.values.last.value.floor >= 0 %>
+          <dd>  <%= line_chart Value.where(indicator_id: @indicator.id).group_by_day(:date).sum(:value), legend: "bottom",colors: ["green"] %></dd>
+          <% else %>
+          <dd>  <%= line_chart Value.where(indicator_id: @indicator.id).group_by_day(:date).sum(:value), legend: "bottom",colors: ["red"] %></dd>
+          <% end %>
+         
+      <%elsif%>
+      
+           <% if @indicator.values.last.value.floor >= 0 %>
+          <dd>  <%= line_chart Value.where(indicator_id: @indicator.id).group_by_day(:date).sum(:value), legend: "bottom",colors: ["red"] %></dd>
+          <% else %>
+          <dd>  <%= line_chart Value.where(indicator_id: @indicator.id).group_by_day(:date).sum(:value), legend: "bottom",colors: ["green"] %></dd>
+          <% end %>
+          
+       <%end %>
       
       <dt>Sentiment</dt> 
-      <% if @indicator.expected_sign.to_i * @indicator.values.last.value.floor >=0 %>
-      <dd> Bullish  </dd>
-      <% else %>
-      <dd> Bearish</dd>
-      <% end %>
+      <% if @indicator.expected_sign.to_i >0 %>
+      
+        <%if @indicator.values.last.value.floor >=0 %>
+        <dd> Bullish  </dd>
+        <% else %>
+        <dd> Bearish</dd>
+        <% end %>
+        
+      <%else%>
+      
+      <%if  @indicator.values.last.value.floor >=0 %>
+        <dd> Bearish  </dd>
+        <% else %>
+        <dd> Bullish</dd>
+        <% end %>
+      
+      <%end %>
       
     </dl>
     
-    <% if current_user.username == "admin" %>
-    <div class="btn-group btn-group-justified">
-      <a href="/indicators" class="btn btn-primary">
-        Back
-      </a>
-      <a href="/indicators/<%= @indicator.id %>/edit" class="btn btn-warning">
-        Edit
-      </a>
-      <a href="/delete_indicator/<%= @indicator.id %>" class="btn btn-danger" rel="nofollow">
-        Delete
-      </a>
-    </div>
-    <%end%>
+   
     
   </div>
 </div>

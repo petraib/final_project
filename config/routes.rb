@@ -5,19 +5,19 @@ Rails.application.routes.draw do
 
 
   # CREATE
-  get "/ourmodels/new", :controller => "ourmodels", :action => "new"
-  post "/create_ourmodel", :controller => "ourmodels", :action => "create"
+  #get "/ourmodels/new", :controller => "ourmodels", :action => "new"
+  #post "/create_ourmodel", :controller => "ourmodels", :action => "create"
 
   # READ
   get "/ourmodels", :controller => "ourmodels", :action => "index"
   get "/ourmodels/:id", :controller => "ourmodels", :action => "show"
 
   # UPDATE
-  get "/ourmodels/:id/edit", :controller => "ourmodels", :action => "edit"
-  post "/update_ourmodel/:id", :controller => "ourmodels", :action => "update"
+  #get "/ourmodels/:id/edit", :controller => "ourmodels", :action => "edit"
+  #post "/update_ourmodel/:id", :controller => "ourmodels", :action => "update"
 
   # DELETE
-  get "/delete_ourmodel/:id", :controller => "ourmodels", :action => "destroy"
+  #get "/delete_ourmodel/:id", :controller => "ourmodels", :action => "destroy"
   #------------------------------
 
   # Routes for the Variable resource:
