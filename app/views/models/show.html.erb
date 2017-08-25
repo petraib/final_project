@@ -1,5 +1,10 @@
 <div class="page-header">
-  <h3><%= @model.mname %></h3>
+  <h3>
+      <a href="/models"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+      <%= @model.mname %>
+      <a href="/models/<%= @model.id %>/edit" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></a>
+      <a href="/delete_model/<%= @model.id %>" class="btn btn-danger" rel="nofollow"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+  </h3>
 </div>
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -44,7 +49,9 @@
     
       
 
-N. Observations: <%= @history_length %>
+<p>N. Observations: <%= @history_length %></p>
+<p>Unscaled Signal: <%= @result.round(2) %></p>
+
 
 <div class="row">
   <div class="col-md-12">
@@ -58,19 +65,27 @@ N. Observations: <%= @history_length %>
       <tr>
         <th>Indicator</th>
         <th>Weight</th>
+        <th>Expected Sign </th> 
+        <th>Last Value</th>
         <th>Actions</th>
       </tr>
 
       <% @model.variables.each do |variable| %>
       <tr>
-        <td><%= Indicator.find(variable.indicator_id).name %></td>
-        <td><%= variable.weight %></td>
-        
+        <td><a href="/variables/<%= variable.id %>" ><%= Indicator.find(variable.indicator_id).name %></a></td>
+        <td><%= variable.weight %> </td>
+        <td><%= Indicator.find(variable.indicator_id).expected_sign %> </td>
+
+        <td><%= Indicator.find(variable.indicator_id).values.last.value.to_f.round(3)  %></td>
+
         <td>
-          <a href="/variables/<%= variable.id %>" class="btn btn-primary">Show</a>
-          <a href="/variables/<%= variable.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_variable/<%= variable.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <a href="/variables/<%= variable.id %>/edit" ><i class="fa fa-pencil" aria-hidden="true"></i></a>
+          <a href="/delete_variable/<%= variable.id %>" rel="nofollow"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
         </td>
+        
+       
+        
+      
       </tr>
       <% end %>
     </table>
@@ -113,28 +128,12 @@ N. Observations: <%= @history_length %>
         </div>
       
         <button class="btn btn-success">
-          <i class="fa fa-plus">Add Variable</i>
+          <i class="fa fa-plus"></i>
         </button>
 
-        <small class="text-muted">be the first to like this</small>
     </form>
   </div>
 </div>
 
 
-<div class="row">
-  <div class="col-md-12 mb-2">
-    
-    <div class="btn-group btn-group-justified">
-      <a href="/models" class="btn btn-primary">
-        Back
-      </a>
-      <a href="/models/<%= @model.id %>/edit" class="btn btn-warning">
-        Edit
-      </a>
-      <a href="/delete_model/<%= @model.id %>" class="btn btn-danger" rel="nofollow">
-        Delete
-      </a>
-    </div>
-  </div>
-</div>
+
