@@ -1,10 +1,11 @@
 <div class="page-header">
   <h1>
-    Our Models
-    <a href="/ourmodels/new" class="btn btn-lg btn-success">New Ourmodel</a>
+    T<i class = "fa fa-hourglass-2"></i>mr Report
   </h1>
+  <p>date:<%= Date.today %></p>
 </div>
 
+<h3> Optimal Combined Market Exposure: </h3>
  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
  <script type="text/javascript">
       google.charts.load('current', {'packages':['gauge']});
@@ -34,8 +35,9 @@
       }
     </script>
 
-<div class = "chart_container" id="chart_div" style="width: 300px; height: 300px; margin-top: 100px; margin-left: 600px"> </div>
+<div class = "chart_container" id="chart_div" style="width: 300px; height: 300px; margin-top: 50px; margin-left: 100px"> </div>
 
+<h3> Individual Models and Weights: </h3>
 
 <div class="row">
   <div class="col-md-12">
@@ -46,6 +48,7 @@
  </div>
 </div>
 
+<h3> Model Details: </h3>
 
 <div class="row">
   <div class="col-md-12">
