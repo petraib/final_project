@@ -1,5 +1,8 @@
 <div class="page-header">
-  <h3><%= @indicator.name %></h3>
+  <h3>
+    <a href="/indicators"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+    <%= @indicator.name %>
+  </h3>
 </div>
 
 <div class="row">
@@ -65,7 +68,7 @@
 
       <% @indicator.sources.each do |source| %>
       <tr>
-        <td><%= Author.find(source.author_id).name %></td>
+        <td> <a href="/authors/<%= source.author_id %>"><%= Author.find(source.author_id).name %></a></td>
         <td><%= source.name %></td>
         <td><a href=<%=source.url%> ><%= source.url %></a></td>
         

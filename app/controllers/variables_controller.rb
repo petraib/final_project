@@ -1,4 +1,8 @@
 class VariablesController < ApplicationController
+  
+  # you can place this into individual controller if want to make it more specific
+  before_action :authenticate_user!
+  
   def index
     @variables = Variable.all
 
